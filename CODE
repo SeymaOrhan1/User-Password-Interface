@@ -1,0 +1,35 @@
+CODE:
+
+from tkinter import*
+from tkinter import messagebox
+
+pencere=Tk()
+pencere.title("Giriş Ekranı")
+pencere.geometry("400x300")
+
+def sign_in():
+    sifre=entry1.get()
+    if sifre=="yazılım":
+        messagebox.showinfo("", "Giriş Yapıldı.")
+        
+      
+    else:
+        messagebox.showerror("Hata", "Giriş Başarısız.")
+        print("Giriş Başarısız.")
+
+
+
+label=Label(pencere, text="Şifrenizi Giriniz: ", font="Arial, 14")
+
+
+label.grid(row=1, column=0)
+
+entry1=Entry(pencere)
+entry1.grid(row=1, column=1)
+
+
+buton1=Button(pencere, text="Giriş", bg="red", fg="white", command=sign_in)
+buton1.grid(row=2, column=2)
+
+
+pencere.mainloop()
